@@ -1,0 +1,114 @@
+body{
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overscroll-behavior-y: none;
+    background:#7daedb;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  div {
+      width: 30vw;
+      height: 30vw;
+      overflow: hidden;
+      position: relative;
+    background:linear-gradient(to bottom, transparent 40%, rgba(0, 0, 0, 0.6) 100%), url(https://source.unsplash.com/0DtoVEDaJbs);
+    background-size:cover;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    -webkit-filter: grayscale(60%);
+      filter: grayscale(60%);
+      transition: all 0.2s linear;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
+                  0 2px 4px rgba(0,0,0,0.07), 
+                  0 4px 8px rgba(0,0,0,0.07), 
+                  0 8px 16px rgba(0,0,0,0.07),
+                  0 16px 32px rgba(0,0,0,0.07), 
+                  0 32px 64px rgba(0,0,0,0.07);
+  }
+  div:hover {
+      -webkit-filter: grayscale(40%);
+      filter: grayscale(40%);
+  }
+  div::before, div::after{
+    content:"";
+    width: 0;
+    height: 12px;
+    position: absolute;
+    transition: all 0.1s linear;
+    background: rgba(255,255,255,0.8);
+    mix-blend-mode:soft-light;
+  }
+  h1 {
+    font: 800 6vw / 6vw Avenir Next, Avenir, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    letter-spacing:-0.02em;
+    color: rgba(255,255,255,0.6);
+    mix-blend-mode:soft-light;
+    -webkit-text-stroke:1px #fff;
+    text-shadow:0 0 5px rgba(0, 0, 0, 0.8);
+    transition: all 0.2s linear;
+  }
+  
+  h1::before, h1::after{
+    content:"";
+    width:12px;
+    height:0;
+    position: absolute;
+    transition: all 0.1s linear;
+    background: rgba(255,255,255,0.8);
+    mix-blend-mode:soft-light;
+  }
+  div:hover::before, div:hover::after{
+    width: 100%;
+  }
+  div:hover h1::before, div:hover h1::after{
+    height: 100%;
+  }
+  
+  div:hover h1 {
+    color: rgba(255,255,255,0.8);
+  }
+  
+  
+  
+  
+  div::after{
+    left: -12px;
+    top: 0;
+    transition-delay: 0.4s;
+  }
+  div h1::after{
+    transition-delay: 0.2s;
+    right: 0;
+    top: -12px;
+  }
+  div::before{
+    right: -12px;
+    bottom: 0;
+    transition-delay: 0.1s;
+  }
+  div h1::before{
+    transition-delay: 0s;
+    left: 0;
+    bottom: -12px;
+  }
+  
+  div:hover::after{
+    transition-delay: 0s;
+  }
+  div:hover h1::after{
+    transition-delay: 0.1s;
+  }
+  div:hover::before{
+    transition-delay: 0.2s;
+  }
+  div:hover h1::before{
+    transition-delay: 0.4s;
+  }
